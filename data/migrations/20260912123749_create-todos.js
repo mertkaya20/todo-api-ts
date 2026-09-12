@@ -7,7 +7,7 @@ exports.up = function (knex) {
     tbl.increments("id").primary();
     tbl.string("title").notNullable();
     tbl.boolean("completed").notNullable().defaultTo(false);
-    tbl.timestamp(true, true);
+    tbl.timestamps(true, true);
   });
 };
 
