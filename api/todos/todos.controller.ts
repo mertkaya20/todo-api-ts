@@ -5,8 +5,8 @@ export async function getAllTodos(req: Request, res: Response) {
   try {
     const todos = await todosModel.getAll();
 
-    if (!todos) {
-      res.status(404).json({ message: "First create some todos." });
+    if (todos.length === 0) {
+      return res.status(404).json({ message: "First create some todos." });
     }
 
     res.status(200).json(todos);
